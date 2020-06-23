@@ -9,7 +9,7 @@ const getSchema = (availableNetworks: Network[]): JSONSchema6 => ({
 	type: 'object',
 	properties: {
 		ssid: {
-			title: 'SSID',
+			title: 'Nome rete WiFi',
 			type: 'string',
 			default: availableNetworks[0]?.ssid,
 			oneOf: availableNetworks.map((network) => ({
@@ -23,7 +23,7 @@ const getSchema = (availableNetworks: Network[]): JSONSchema6 => ({
 			default: '',
 		},
 		passphrase: {
-			title: 'Passphrase',
+			title: 'Password',
 			type: 'string',
 		},
 	},
@@ -32,7 +32,7 @@ const getSchema = (availableNetworks: Network[]): JSONSchema6 => ({
 
 const getUiSchema = (isEnterprise: boolean): RenditionUiSchema => ({
 	ssid: {
-		'ui:placeholder': 'Select SSID',
+		'ui:placeholder': 'Seleziona il nome rete WiFi',
 		'ui:options': {
 			emphasized: true,
 		},
@@ -86,7 +86,7 @@ export const NetworkInfoForm = ({
 			mt={5}
 		>
 			<Heading.h3 align="center" mb={4}>
-				Hi! Please choose your WiFi from the list
+				Ciao, benvenuto in Scala! Seleziona la rete WiFi dalla lista
 			</Heading.h3>
 
 			<Form

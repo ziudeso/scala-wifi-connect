@@ -50,7 +50,7 @@ const App = () => {
 			})
 			.then(setAvailableNetworks)
 			.catch((e: Error) => {
-				setError(`Failed to fetch available networks. ${e.message || e}`);
+				setError(`Impossibile listare le reti disponibili. ${e.message || e}`);
 			})
 			.finally(() => {
 				setIsFetchingNetworks(false);
@@ -74,7 +74,7 @@ const App = () => {
 				}
 			})
 			.catch((e: Error) => {
-				setError(`Failed to connect to the network. ${e.message || e}`);
+				setError(`Impossibile connettersi alla rete. ${e.message || e}`);
 			});
 	};
 
