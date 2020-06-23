@@ -1,6 +1,6 @@
 {
-  "short_name": "WiFi Connect",
-  "name": "Easy WiFi setup for Linux devices from your mobile phone or laptop",
+  "short_name": "Scala Connect",
+  "name": "Connessione Scala",
   "icons": [
     {
       "src": "favicon.png",
