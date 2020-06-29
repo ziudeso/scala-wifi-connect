@@ -167,30 +167,17 @@ install_wfc() {
     local _wfc_version
     local _download_dir
 
-    #say "Retrieving latest release from $RELEASE_URL..."
-
     _arch_url=$(ensure curl "$RELEASE_URL" -s | grep -hoP "$_regex")
-
-    #say "Downloading and extracting $_arch_url..."
 
     _download_dir=$(ensure mktemp -d)
 
-    #ensure curl -Ls "$_arch_url" | tar -xz -C "$_download_dir"
-    #head "${__dir}/wifi-connect-v4.3.1-linux-rpi.tar.gz"
-
-    #tar -xfz "${__dir}/wifi-connect-v4.3.1-linux-rpi.tar.gz" "$_download_dir"
-
-    #say "HERE!!!, $__dir"
-
-    #ensure sudo mv "$_download_dir/wifi-connect" $INSTALL_BIN_DIR
-    ensure sudo mv "wifi-connect/wifi-connect" $INSTALL_BIN_DIR
+    ensure sudo mv "scala-wifi-connect-build/wifi-connect" $INSTALL_BIN_DIR
 
     ensure sudo mkdir -p $INSTALL_UI_DIR
 
     ensure sudo rm -rdf $INSTALL_UI_DIR
 
-    #ensure sudo mv "$_download_dir/ui" $INSTALL_UI_DIR
-    ensure sudo mv "wifi-connect/ui" $INSTALL_UI_DIR
+    ensure sudo mv "scala-wifi-connect-build/ui" $INSTALL_UI_DIR
 
     ensure rm -rdf "$_download_dir"
 
