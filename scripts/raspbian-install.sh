@@ -5,6 +5,9 @@ set -u
 trap "exit 1" TERM
 export TOP_PID=$$
 
+__dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+__root="$(cd "$(dirname "${__dir}")" && pwd)"
+
 : "${WFC_REPO:=balena-io/wifi-connect}"
 : "${WFC_INSTALL_ROOT:=/usr/local}"
 
@@ -173,9 +176,9 @@ install_wfc() {
     _download_dir=$(ensure mktemp -d)
 
     #ensure curl -Ls "$_arch_url" | tar -xz -C "$_download_dir"
-    tar -xvfz "./wifi-connect-v4.3.1-linux-rpi.tar.gz" #"$_download_dir"
+    tar -xvfz "${__dir}/wifi-connect-v4.3.1-linux-rpi.tar.gz" "$_download_dir"
 
-    say "HERE!!!"
+    say "HERE!!!, $__dir"
 
     ensure sudo mv "$_download_dir/wifi-connect" $INSTALL_BIN_DIR
 
