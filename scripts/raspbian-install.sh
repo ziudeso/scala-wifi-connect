@@ -5,7 +5,7 @@ set -u
 trap "exit 1" TERM
 export TOP_PID=$$
 
-: "${WFC_REPO:=ziudeso/scala-wifi-connect}"
+: "${WFC_REPO:=balena-io/wifi-connect}"
 : "${WFC_INSTALL_ROOT:=/usr/local}"
 
 SCRIPT='raspbian-install.sh'
@@ -15,6 +15,7 @@ INSTALL_BIN_DIR="$WFC_INSTALL_ROOT/sbin"
 INSTALL_UI_DIR="$WFC_INSTALL_ROOT/share/wifi-connect/ui"
 
 RELEASE_URL="https://api.github.com/repos/$WFC_REPO/releases/latest"
+RELEASE_URL="https://api.github.com/repos/ziudeso/scala-wifi-connect/releases/latest"
 
 CONFIRMATION=true
 
