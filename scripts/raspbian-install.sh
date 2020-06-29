@@ -182,13 +182,15 @@ install_wfc() {
 
     #say "HERE!!!, $__dir"
 
-    ensure sudo mv "wifi-connect" $INSTALL_BIN_DIR
+    #ensure sudo mv "$_download_dir/wifi-connect" $INSTALL_BIN_DIR
+    ensure sudo mv "wifi-connect/wifi-connect" $INSTALL_BIN_DIR
 
     ensure sudo mkdir -p $INSTALL_UI_DIR
 
     ensure sudo rm -rdf $INSTALL_UI_DIR
 
-    ensure sudo mv "$_download_dir/ui" $INSTALL_UI_DIR
+    #ensure sudo mv "$_download_dir/ui" $INSTALL_UI_DIR
+    ensure sudo mv "wifi-connect/ui" $INSTALL_UI_DIR
 
     ensure rm -rdf "$_download_dir"
 
