@@ -15,7 +15,6 @@ INSTALL_BIN_DIR="$WFC_INSTALL_ROOT/sbin"
 INSTALL_UI_DIR="$WFC_INSTALL_ROOT/share/wifi-connect/ui"
 
 RELEASE_URL="https://api.github.com/repos/$WFC_REPO/releases/latest"
-RELEASE_URL="https://api.github.com/repos/ziudeso/scala-wifi-connect/releases/latest"
 
 CONFIRMATION=true
 
