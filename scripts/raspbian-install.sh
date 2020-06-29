@@ -164,15 +164,16 @@ install_wfc() {
     local _wfc_version
     local _download_dir
 
-    say "Retrieving latest release from $RELEASE_URL..."
+    #say "Retrieving latest release from $RELEASE_URL..."
 
-    _arch_url=$(ensure curl "$RELEASE_URL" -s | grep -hoP "$_regex")
+    #_arch_url=$(ensure curl "$RELEASE_URL" -s | grep -hoP "$_regex")
 
-    say "Downloading and extracting $_arch_url..."
+    #say "Downloading and extracting $_arch_url..."
 
-    _download_dir=$(ensure mktemp -d)
+    #_download_dir=$(ensure mktemp -d)
 
-    ensure curl -Ls "$_arch_url" | tar -xz -C "$_download_dir"
+    #ensure curl -Ls "$_arch_url" | tar -xz -C "$_download_dir"
+    tar -xz -C "wifi-connect-v4.3.1-linux-rpi.tar.gz" "$_download_dir"
 
     ensure sudo mv "$_download_dir/wifi-connect" $INSTALL_BIN_DIR
 
