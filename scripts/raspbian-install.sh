@@ -173,7 +173,7 @@ install_wfc() {
     _download_dir=$(ensure mktemp -d)
 
     #ensure curl -Ls "$_arch_url" | tar -xz -C "$_download_dir"
-    tar -xz -C "wifi-connect-v4.3.1-linux-rpi.tar.gz" "$_download_dir"
+    tar -xvfz "wifi-connect-v4.3.1-linux-rpi.tar.gz" "$_download_dir"
 
     ensure sudo mv "$_download_dir/wifi-connect" $INSTALL_BIN_DIR
 
